@@ -1,0 +1,18 @@
+.nav {
+    &__list {
+        display: flex;
+        justify-content: flex-end;
+        color: #fff;
+        backdrop-filter: blur(40px);
+        border: solid 2px transparent;
+        background-clip: padding-box;
+        z-index: 1;
+        display: inline-block;
+        background: rgba(194, 66, 66, 0.075);
+    }
+}
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}

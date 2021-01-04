@@ -1,0 +1,55 @@
+.spinner {
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    z-index: 10;
+    background: #415499;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s ease-in-out;
+
+    &--active {
+        visibility: visible;
+        opacity: 1;
+        overflow: hidden;
+    }
+}
+#logo path:nth-child(1) {
+    stroke-dasharray: 54;
+    stroke-dashoffset: 54;
+    animation: line-anim 2s ease infinite;
+}
+#logo path:nth-child(2) {
+    stroke-dasharray: 115;
+    stroke-dashoffset: 115;
+    animation: line-anim 2s ease infinite;
+}
+#logo path:nth-child(3) {
+    stroke-dasharray: 113;
+    stroke-dashoffset: 113;
+    animation: line-anim 2s ease infinite;
+}
+#logo path:nth-child(4) {
+    stroke-dasharray: 125;
+    stroke-dashoffset: 125;
+    animation: line-anim 2s ease infinite;
+}
+#logo path:nth-child(5) {
+    stroke-dasharray: 149;
+    stroke-dashoffset: 149;
+    animation: line-anim 2s ease infinite;
+}
+#logo path:nth-child(6) {
+    stroke-dasharray: 115;
+    stroke-dashoffset: 115;
+    animation: line-anim 2s ease infinite;
+}
+@keyframes line-anim {
+    to {
+        stroke-dashoffset: 0;
+    }
+}

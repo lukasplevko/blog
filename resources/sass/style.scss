@@ -1,0 +1,23 @@
+@import "./parts/_article";
+@import "./parts/_navbar";
+@import "./parts/_spinner";
+
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+
+    color: #fff;
+    background: #111827;
+    font-size: 16px;
+    max-width: 2000px;
+    margin: auto;
+}
+main {
+    min-height: 100vh;
+    display: block;
+    position: relative;
+}
