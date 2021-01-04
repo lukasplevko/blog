@@ -10,7 +10,7 @@ v terminali píš nasledovne príkazy samostatne: <br>
 	<li><strong>npm run dev</strong></li>
 <ul>
 
-<h2 style="color:red;">po dokončení</h2>
+<h2>po dokončení</h2>
 v .env.example prepíš veci na udaje z tvojej ktoru si vytvoríš v php my admin
 .env.example premenuj na .env
 do terminalu napíš php artisan config:cache
