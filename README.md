@@ -1,13 +1,16 @@
 ## Ako rozbehať appku
 
-Otvor projekt v visual studio code;
-Otvor si terminal
-v terminali: <br>
-<strong>composer install<strong>
-npm install
-npm run dev
+Otvor projekt vo visual studio code; <br>
+Otvor si terminal,
+v terminali píš nasledovne príkazy samostatne: <br>
 
-po dokončení
+<ul>
+	<li><strong>composer install</strong> </li>
+	<li><strong>npm install</strong></li>
+	<li><strong>npm run dev</strong></li>
+<ul>
+
+<h2 style="color:red;">po dokončení</h2>
 v .env.example prepíš veci na udaje z tvojej ktoru si vytvoríš v php my admin
 .env.example premenuj na .env
 do terminalu napíš php artisan config:cache
