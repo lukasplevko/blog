@@ -2,8 +2,8 @@
 
 Otvor projekt v visual studio code;
 Otvor si terminal
-v terminali:
-composer install
+v terminali: <br>
+<strong>composer install<strong>
 npm install
 npm run dev
 
