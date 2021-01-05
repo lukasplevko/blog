@@ -13,7 +13,8 @@ use Brackets\Media\HasMedia\HasMediaThumbsTrait;
 use Spatie\MediaLibrary\HasMedia;
 
 
-class Post extends Model implements HasMedia
+class Post extends Model implements
+    HasMedia
 {
 
     use ProcessMediaTrait;
@@ -38,6 +39,10 @@ class Post extends Model implements HasMedia
     //https://spatie.be/docs/laravel-medialibrary/v9/introduction
     public function registerMediaConversions(Media $media = null): void
     {
+        $this->addMediaConversion('thumbnail-wide')
+            ->width(1024)
+            ->performOnCollections('thumbnail');
+
         $this->autoRegisterThumb200();
     }
 

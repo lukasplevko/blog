@@ -51,6 +51,44 @@
   width: 48%;
 }
 
+.article__header {
+  height: 14rem;
+  overflow: hidden;
+}
+
+.article__img {
+  width: 100%;
+}
+
+.article__text {
+  margin-top: -4rem;
+  max-width: 40rem;
+  margin: auto;
+}
+
+.article__text-heading {
+  background: rgba(0, 0, 0, 0.322);
+  padding: 0.3rem;
+  margin-top: -5rem;
+  position: relative;
+}
+
+.article__gallery {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+
+.article__gallery-item {
+  height: 200px;
+  opacity: 0.4;
+}
+
+.article__gallery-item:hover {
+  opacity: 1;
+}
+
 .nav__list {
   display: flex;
   justify-content: flex-end;
@@ -164,5 +202,13 @@ main {
   min-height: 100vh;
   display: block;
   position: relative;
+}
+
+.page__footer {
+  text-align: center;
+  margin-top: 1rem;
+  border-top: 1px dashed #252424;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
 }
 

@@ -33,21 +33,22 @@ class StorePost extends FormRequest
             'published_at' => ['nullable', 'date'],
             'enabled' => ['required', 'boolean'],
             'views' => ['required', 'integer'],
-            
+
         ];
     }
 
     /**
-    * Modify input data
-    *
-    * @return array
-    */
+     * Modify input data
+     *
+     * @return array
+     */
     public function getSanitized(): array
     {
         $sanitized = $this->validated();
 
         //Add your code for manipulation with request data here
-
+        $newSlug = $sanitized['title'] . date('Ymd-g:i');
+        $sanitized['slug'] = $newSlug;
         return $sanitized;
     }
 }

@@ -1,0 +1,46 @@
+.tile-wrapper {
+    position: relative;
+    font-size: 0;
+    padding-top: 6rem;
+    padding-bottom: 7vh;
+}
+.tile {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 5vh;
+    padding: 0 3.6vw;
+    text-align: left;
+    margin-bottom: 5vh;
+    width: 33.3333333333333333333333333336%;
+    transition: all 0.2s ease-in-out;
+
+    &__container {
+        position: relative;
+    }
+    &__img-wrapper {
+        overflow: hidden;
+        display: inline-block;
+        margin-bottom: 23px;
+        width: 100%;
+    }
+    &__figure {
+        width: 100%;
+        position: relative;
+    }
+    &__title {
+        font-weight: 400;
+        font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        & > a {
+            color: #fff;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.is-wide {
+    width: 48%;
+}

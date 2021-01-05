@@ -1,3 +1,4 @@
+@import "./parts/_homepage";
 @import "./parts/_article";
 @import "./parts/_navbar";
 @import "./parts/_spinner";
@@ -20,4 +21,11 @@ main {
     min-height: 100vh;
     display: block;
     position: relative;
+}
+.page__footer {
+    text-align: center;
+    margin-top: 1rem;
+    border-top: 1px dashed rgb(37, 36, 36);
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
 }

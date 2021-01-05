@@ -15,7 +15,7 @@ use App\Http\Controllers\PagesController;
 */
 
 Route::get('/', [PagesController::class, 'home'])->name('home');
-
+Route::get('/{slug}', [PagesController::class, 'show'])->name('article');
 
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {

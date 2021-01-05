@@ -84370,7 +84370,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
         semantic: true,
         semanticKeepAttributes: false,
         resetCss: false,
-        removeformatPasted: false,
+        removeformatPasted: true,
         tabToIndent: false,
         tagsToRemove: [],
         tagsToKeep: ['hr', 'img', 'embed', 'iframe', 'input'],
@@ -84836,7 +84836,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
             t.$ta
                 .addClass(prefix + 'textarea')
                 .attr('tabindex', -1)
-            ;
+                ;
 
             t.$ed
                 .addClass(prefix + 'editor')
@@ -84845,7 +84845,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
                     dir: t.lang._dir || 'ltr'
                 })
                 .html(html)
-            ;
+                ;
 
             if (t.o.tabindex) {
                 t.$ed.attr('tabindex', t.o.tabindex);
@@ -84970,13 +84970,13 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
                             t.autogrowOnEnterWasFocused = true;
                             t.autogrowEditorOnEnter();
                         } else if (!t.o.autogrow) {
-                            t.$ed.css({height: t.$ed.css('min-height')});
+                            t.$ed.css({ height: t.$ed.css('min-height') });
                             t.$c.trigger('tbwresize');
                         }
                     }
                 })
                 .on('keyup focus', function () {
-                  if (!t.$ta.val().match(/<.*>/) && !t.$ed.html().match(/<.*>/)) {
+                    if (!t.$ta.val().match(/<.*>/) && !t.$ed.html().match(/<.*>/)) {
                         setTimeout(function () {
                             var block = t.isIE ? '<p>' : 'p';
                             t.doc.execCommand('formatBlock', false, block);
@@ -85057,7 +85057,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
             if (oldHeight !== totalHeight) {
                 t.$ed.height(oldHeight);
                 setTimeout(function () {
-                    t.$ed.css({height: totalHeight});
+                    t.$ed.css({ height: totalHeight });
                     t.$c.trigger('tbwresize');
                 }, 0);
             }
@@ -85257,7 +85257,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
                                 left: fixedFullWidth ? 0 : 'auto',
                                 zIndex: 7
                             });
-                            t.$box.css({paddingTop: $buttonPane.height()});
+                            t.$box.css({ paddingTop: $buttonPane.height() });
                         }
                         $buttonPane.css({
                             width: fixedFullWidth ? '100%' : (($box.width() - 1))
@@ -85271,7 +85271,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
                     } else if (t.isFixed) {
                         t.isFixed = false;
                         $buttonPane.removeAttr('style');
-                        t.$box.css({paddingTop: 0});
+                        t.$box.css({ paddingTop: 0 });
                         $('.' + t.o.prefix + 'fixed-top', $box).css({
                             position: 'absolute',
                             top: buttonPaneOuterHeight
@@ -85304,7 +85304,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
             if (t.isTextarea) {
                 t.$box.after(
                     t.$ta
-                        .css({height: ''})
+                        .css({ height: '' })
                         .val(t.html())
                         .removeClass(prefix + 'textarea')
                         .show()
@@ -85312,7 +85312,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
             } else {
                 t.$box.after(
                     t.$ed
-                        .css({height: ''})
+                        .css({ height: '' })
                         .removeClass(prefix + 'editor')
                         .removeAttr('contenteditable')
                         .removeAttr('dir')
@@ -85453,7 +85453,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
             if (t.o.autogrow) {
                 t.height = t.$ed.height();
                 if (t.height !== t.$ta.css('height')) {
-                    t.$ta.css({height: t.height});
+                    t.$ta.css({ height: t.height });
                     t.$c.trigger('tbwresize');
                 }
             }
@@ -85461,7 +85461,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
                 t.$ed.height('auto');
                 var totalHeight = t.autogrowOnEnterWasFocused ? t.$ed[0].scrollHeight : t.$ed.css('min-height');
                 if (totalHeight !== t.$ta.css('height')) {
-                    t.$ed.css({height: totalHeight});
+                    t.$ed.css({ height: totalHeight });
                     t.$c.trigger('tbwresize');
                 }
             }
@@ -85536,7 +85536,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
                 return;
             }
 
-            if(revert) {
+            if (revert) {
                 oldTag = newTag;
                 newTag = tmpTag;
             }
@@ -85548,7 +85548,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
                     return false;
                 }
 
-                if(t.range.startContainer.parentNode && t.range.startContainer.parentNode === this) {
+                if (t.range.startContainer.parentNode && t.range.startContainer.parentNode === this) {
                     resetRange = true;
                 }
                 var $newTag = $('<' + newTag + '/>');
@@ -85560,7 +85560,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
                 }
                 $newTag.html($oldTag.html());
                 $oldTag.remove();
-                if(resetRange === true) {
+                if (resetRange === true) {
                     t.range.selectNodeContents($newTag.get(0));
                     t.range.collapse(false);
                 }
@@ -85758,7 +85758,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
                 t.$ed.focus();
             }
 
-            if(cmd === 'strikethrough' && t.o.semantic) {
+            if (cmd === 'strikethrough' && t.o.semantic) {
                 t.semanticTag('strike', t.o.semanticKeepAttributes, true); // browsers cannot undo e.g. <del> as they expect <strike>
             }
 
@@ -85785,7 +85785,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
                     t.semanticCode(false, true);
                     try {
                         var listId = window.getSelection().focusNode;
-                        if(!$(window.getSelection().focusNode.parentNode).hasClass('trumbowyg-editor')){
+                        if (!$(window.getSelection().focusNode.parentNode).hasClass('trumbowyg-editor')) {
                             listId = window.getSelection().focusNode.parentNode;
                         }
                         var classes = t.o.tagClasses[param];
@@ -116905,7 +116905,7 @@ Vue.component("post-form", {
     return {
       form: {
         title: "",
-        slug: "",
+        slug: "slug123slug",
         perex: "",
         text: "",
         published_at: "",

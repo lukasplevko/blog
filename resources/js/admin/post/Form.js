@@ -2,11 +2,11 @@ import AppForm from "../app-components/Form/AppForm";
 
 Vue.component("post-form", {
     mixins: [AppForm],
-    data: function() {
+    data: function () {
         return {
             form: {
                 title: "",
-                slug: "",
+                slug: "slug123slug",
                 perex: "",
                 text: "",
                 published_at: "",
