@@ -3,7 +3,8 @@ require('./spinner');
 require('./bootstrap');
 require('./articles');
 // require('./slick');
-require('./lightbox')
+require('./lightbox');
+require('alpinejs');
 
 // $('.article__gallery').slick({
 // 	dots: true,

@@ -2,6 +2,15 @@
 @import "./parts/_article";
 @import "./parts/_navbar";
 @import "./parts/_spinner";
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+@import "~lightbox2/dist/css/lightbox";
 
 * {
     box-sizing: border-box;
