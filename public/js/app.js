@@ -37265,6 +37265,17 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/css/app.css":
+/*!*******************************!*\
+  !*** ./resources/css/app.css ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -37929,17 +37940,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./resources/sass/style.scss":
 /*!***********************************!*\
   !*** ./resources/sass/style.scss ***!
@@ -37952,16 +37952,16 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /***/ }),
 
 /***/ 0:
-/*!***************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/style.scss ./resources/sass/admin/admin.scss ***!
-  \***************************************************************************************************************************/
+/*!*************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/style.scss ./resources/sass/admin/admin.scss ./resources/css/app.css ***!
+  \*************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\laragon\code\home\blog\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\laragon\code\home\blog\resources\sass\app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! C:\laragon\code\home\blog\resources\sass\style.scss */"./resources/sass/style.scss");
-module.exports = __webpack_require__(/*! C:\laragon\code\home\blog\resources\sass\admin\admin.scss */"./resources/sass/admin/admin.scss");
+__webpack_require__(/*! C:\laragon\code\home\blog\resources\sass\admin\admin.scss */"./resources/sass/admin/admin.scss");
+module.exports = __webpack_require__(/*! C:\laragon\code\home\blog\resources\css\app.css */"./resources/css/app.css");
 
 
 /***/ })
