@@ -17,6 +17,12 @@ use App\Http\Controllers\PagesController;
 Route::get('/', [PagesController::class, 'home'])->name('home');
 Route::get('/{slug}', [PagesController::class, 'show'])->name('article');
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__ . '/auth.php';
+
 /* Auto-generated admin routes */
 Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->group(static function () {
     Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->name('admin/')->group(static function () {

@@ -1,11 +1,21 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
-    purge: ["./resources/layout/master.blade.php"],
-    darkMode: false, // or 'media' or 'class'
+    purge: ['./storage/framework/views/*.php', './resources/views/**/*.blade.php'],
+
     theme: {
-        extend: {}
+        extend: {
+            fontFamily: {
+                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+            },
+        },
     },
+
     variants: {
-        extend: {}
+        extend: {
+            opacity: ['disabled'],
+        },
     },
-    plugins: []
+
+    plugins: [require('@tailwindcss/forms')],
 };
