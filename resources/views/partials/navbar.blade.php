@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="{{ route('home') }}">readme</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +15,7 @@
                 --}}
             </li>
             @if (Auth::user())
-                <li>
+                <li class="nav-item nav-item-username">
                     <!-- Settings Dropdown -->
 
                     <x-dropdown width=" 48">
@@ -36,14 +36,23 @@
                         </x-slot>
             @endif
 
+
+            <li class="nav-item nav-item--login"><a href=" {{ route('login') }}">Prihlásiť sa</a></li>
+            <li class="nav-item nav-item--login"><a href=" {{ route('register') }}">Zaregistrovať sa</a></li>
+
+
             <x-slot name="content">
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
+
+                    <x-dropdown-link :href="route('dashboard')">
+                        {{ __('Profil') }}
+                    </x-dropdown-link>
                     <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                        {{ __('Logout') }}
+                        {{ __('Odhlásiť sa') }}
                     </x-dropdown-link>
                 </form>
             </x-slot>
@@ -51,9 +60,13 @@
     </div>
     </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Hľadať</button>
+    <form class="form-inline my-2 my-lg-0" autocomplete="off">
+
+        <input class="form-control mr-sm-2" type="search" placeholder="Hľadať" aria-label="Search" id="searchbar">
+        <div class="search__ball"></div>
+        <div class="search__dropdown">
+
+        </div>
     </form>
     </div>
 </nav>

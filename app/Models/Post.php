@@ -24,6 +24,10 @@ class Post extends Model implements
     //registrácia kolekcie médii (obrázky/pdf/videá),
     //v resources/js/post/form.js
     //su tieto kolekcie spomenute
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('gallery')

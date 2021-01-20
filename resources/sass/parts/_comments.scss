@@ -1,0 +1,73 @@
+.comment {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 3rem;
+    flex-flow: column;
+    &__boxes {
+        padding-bottom: 10rem;
+    }
+    &__items {
+        padding-top: 3rem;
+        max-height: 17rem;
+        overflow-y: scroll;
+    }
+    &__list {
+        &-item {
+            padding: 1rem;
+            margin: 1rem 0;
+            background: #282827;
+            overflow-wrap: break-word;
+            max-width: 49rem;
+            border-radius: 1rem;
+        }
+    }
+    &__area {
+        resize: none;
+        color: #000;
+    }
+    &__form {
+        position: relative;
+    }
+    &__btn {
+        position: absolute;
+        right: 0;
+        bottom: 16px;
+    }
+    &__icon {
+        width: 1rem;
+    }
+    &__access {
+        margin-top: 3rem !important;
+        background: rgba(58, 57, 57, 0.514) !important;
+        backdrop-filter: blur(30px);
+        background-clip: padding-box;
+
+        &-block {
+            position: relative;
+            overflow: hidden;
+        }
+    }
+    &__ball {
+        width: 100px;
+        border-radius: 50%;
+        height: 100px;
+        position: absolute;
+        left: 0;
+        animation: 9s bounce infinite alternate;
+    }
+}
+@keyframes bounce {
+    from {
+        top: 0;
+        left: 0;
+        background: rgb(179, 110, 110);
+    }
+    to {
+        background: rgb(252, 252, 252);
+
+        left: 100%;
+        top: 100%;
+        right: 0;
+        bottom: 0;
+    }
+}

@@ -15,7 +15,12 @@ use App\Http\Controllers\PagesController;
 */
 
 Route::get('/', [PagesController::class, 'home'])->name('home');
-Route::get('/{slug}', [PagesController::class, 'show'])->name('article');
+Route::get('post/{slug}', [PagesController::class, 'show'])->name('article');
+Route::post('post/{slug}/comment', [PagesController::class, 'comment']);
+Route::get('post/{slug}/api/comments', [PagesController::class, 'getComments']);
+// Route::get('/api/posts', [PagesController::class, 'getPosts']);
+Route::get('api/posts', [PagesController::class, 'getPosts']);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

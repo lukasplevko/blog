@@ -75,6 +75,10 @@
     <footer class="page__footer">
         SOČ 2020
     </footer>
+    <script>
+        loggedIn = {!!json_encode(Auth::check()) !!}
+
+    </script>
 </body>
 
 </html>

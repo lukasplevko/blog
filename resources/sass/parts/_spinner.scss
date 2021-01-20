@@ -1,6 +1,7 @@
 .spinner {
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
+    bottom: 0;
     position: absolute;
     z-index: 10;
     background: #415499;
@@ -52,4 +53,8 @@
     to {
         stroke-dashoffset: 0;
     }
+}
+
+.scroll--off {
+    overflow: hidden;
 }

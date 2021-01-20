@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
+
     <article class="article container">
+
         @foreach ($post as $item)
 
             <header class="article__header">
@@ -32,6 +34,8 @@
             </section>
         @endforeach
 
-
+        @include('partials.comments')
     </article>
+
+
 @endsection
