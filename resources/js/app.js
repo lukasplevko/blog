@@ -1,4 +1,4 @@
-"use strict";
+
 require('./spinner');
 require('./navbar');
 require('./bootstrap');

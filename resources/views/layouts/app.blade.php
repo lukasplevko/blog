@@ -76,7 +76,19 @@
         SOČ 2020
     </footer>
     <script>
-        loggedIn = {!!json_encode(Auth::check()) !!}
+        loggedIn = {!!json_encode(Auth::check()) !!};
+       let buttons = document.querySelectorAll('.nav-item--login');
+console.log(loggedIn)
+if (loggedIn) {
+	buttons.forEach(btn => {
+		btn.classList.add('nav-item--visible');
+	})
+}
+if (loggedIn) {
+	submitBtn.addEventListener('click', Comment.addComment);
+	textArea.addEventListener('keyup', Comment.submitOnEnter);
+}
+
 
     </script>
 </body>

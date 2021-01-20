@@ -9,6 +9,10 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="{{ route('home') }}">Domov<span class="sr-only">(current)</span></a>
+                @if (!Auth::user())
+            <li class="nav-item "><a class="nav-link" href=" {{ route('login') }}">Prihlásiť sa</a></li>
+            <li class="nav-item "><a class="nav-link" href=" {{ route('register') }}">Zaregistrovať sa</a></li>
+            @endif
             </li>
             <li class="nav-item">
                 {{-- <a class="nav-link" href="{{ route('articles') }}">Všetky články</a>
@@ -36,9 +40,6 @@
                         </x-slot>
             @endif
 
-
-            <li class="nav-item nav-item--login"><a href=" {{ route('login') }}">Prihlásiť sa</a></li>
-            <li class="nav-item nav-item--login"><a href=" {{ route('register') }}">Zaregistrovať sa</a></li>
 
 
             <x-slot name="content">

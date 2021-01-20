@@ -90,9 +90,6 @@ const Comment = (function () {
 	}
 
 }())
-if (loggedIn) {
-	submitBtn.addEventListener('click', Comment.addComment);
-	textArea.addEventListener('keyup', Comment.submitOnEnter);
-}
+
 
 window.addEventListener('load', Comment.initComments);
