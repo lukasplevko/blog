@@ -1,6 +1,6 @@
 
-var textArea = document.querySelector('.comment__area');
-var submitBtn = document.querySelector('.comment__btn');
+
+
 
 
 const Comment = (function () {

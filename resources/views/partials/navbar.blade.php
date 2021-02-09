@@ -15,8 +15,7 @@
             @endif
             </li>
             <li class="nav-item">
-                {{-- <a class="nav-link" href="{{ route('articles') }}">Všetky články</a>
-                --}}
+                {{-- <a class="nav-link" href="{{ route('articles') }}">Všetky články</a> --}}
             </li>
             @if (Auth::user())
                 <li class="nav-item nav-item-username">
@@ -62,12 +61,8 @@
     </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" autocomplete="off">
-
         <input class="form-control mr-sm-2" type="search" placeholder="Hľadať" aria-label="Search" id="searchbar">
-        <div class="search__ball"></div>
-        <div class="search__dropdown">
 
-        </div>
     </form>
     </div>
 </nav>

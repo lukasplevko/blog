@@ -1,5 +1,4 @@
-{{--
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -77,18 +76,21 @@
     </footer>
     <script>
         loggedIn = {!!json_encode(Auth::check()) !!};
-       let buttons = document.querySelectorAll('.nav-item--login');
-console.log(loggedIn)
-if (loggedIn) {
-	buttons.forEach(btn => {
-		btn.classList.add('nav-item--visible');
-	})
-}
-if (loggedIn) {
-	submitBtn.addEventListener('click', Comment.addComment);
-	textArea.addEventListener('keyup', Comment.submitOnEnter);
-}
+        let buttons = document.querySelectorAll('.nav-item--login');
 
+        if (loggedIn) {
+            buttons.forEach(btn => {
+                btn.classList.add('nav-item--visible');
+            })
+        }
+        if (loggedIn && submitBtn) {
+
+
+            var textArea = document.querySelector('.comment__area');
+            var submitBtn = document.querySelector('.comment__btn');
+            submitBtn.addEventListener('click', Comment.addComment);
+            textArea.addEventListener('keyup', Comment.submitOnEnter);
+        }
 
     </script>
 </body>

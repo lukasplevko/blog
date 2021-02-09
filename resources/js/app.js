@@ -1,7 +1,10 @@
 
-require('./spinner');
-require('./navbar');
 require('./bootstrap');
+import 'jquery-ui/ui/widgets/autocomplete.js';
+require('./spinner');
+
+require('./navbar');
+
 require('./articles');
 require('./search');
 // require('./slick');
