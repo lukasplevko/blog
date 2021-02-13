@@ -12,6 +12,7 @@ class Comment extends Model
     {
         return $this->belongsTo(Post::class);
     }
-    protected $fillable = ['user', 'comment', 'post_id'];
+    protected $dateFormat = 'd.m.Y';
+    protected $fillable = ['user_id', 'fullname', 'content', 'post_id', 'comment_id'];
     protected $table = 'comments';
 }

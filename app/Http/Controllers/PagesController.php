@@ -26,16 +26,37 @@ class PagesController extends Controller
     {
         $request->user = $request->user();
         $validated = $request->validate([
-            'user' => 'nullable',
-            'post_id' => 'nullable',
-            'comment' => 'required|max:280',
+            'content' => 'required|max:280',
+
         ]);
         $article = Post::where('slug', $request->slug)->first();
         $comment = Comment::create([
-            'user' => $request->user()->name,
+            'fullname' => $request->user()->name,
+            'comment_id' => $request->comment_id,
+            'user_id' => $request->user()->id,
             'post_id' => $article->id,
-            'comment' => $request->comment,
+            'content' => $request->content,
+
         ]);
+        return response()->json($comment);
+    }
+    public function EditComment(Request $request)
+    {
+        $comment = Comment::where('comment_id', $request->comment_id)->first();
+
+        $this->validate($request, [
+            'content' => 'required|max:280',
+        ]);
+
+
+
+
+        $comment->fullname       = $comment->fullname;
+        $comment->comment_id     = $comment->comment_id;
+        $comment->user_id = $comment->user_id;
+        $comment->post_id = $comment->post_id;
+        $comment->content = $request->content;
+        $comment->save();
         return response()->json($comment);
     }
 
@@ -54,5 +75,16 @@ class PagesController extends Controller
     }
     public function destroyComment(Request $request)
     {
+        $comment = Comment::where('comment_id', $request->comment_id)->first();
+
+        $comment->delete();
+
+
+
+        return response()->json($comment);
+    }
+    public function dashboard()
+    {
+        return view('dashboard');
     }
 }

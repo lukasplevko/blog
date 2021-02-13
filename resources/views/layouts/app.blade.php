@@ -45,10 +45,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/slick.css') }}"> --}}
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="{{ asset('css/jquery-comments.css') }}">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
         rel="stylesheet">
@@ -69,30 +72,19 @@
             @yield('content')
         </div>
     </main>
-
-    <script src="{{ asset('js/app.js') }}"></script>
-    <footer class="page__footer">
-        SOČ 2020
-    </footer>
     <script>
-        loggedIn = {!!json_encode(Auth::check()) !!};
-        let buttons = document.querySelectorAll('.nav-item--login');
-
-        if (loggedIn) {
-            buttons.forEach(btn => {
-                btn.classList.add('nav-item--visible');
-            })
-        }
-        if (loggedIn && submitBtn) {
-
-
-            var textArea = document.querySelector('.comment__area');
-            var submitBtn = document.querySelector('.comment__btn');
-            submitBtn.addEventListener('click', Comment.addComment);
-            textArea.addEventListener('keyup', Comment.submitOnEnter);
+        window.Laravel = {
+            csrfToken: '{{ csrf_token() }}'
         }
 
     </script>
+    <script src="{{ asset('js/app.js') }}"></script>
+
+    <script src="{{ asset('js/jquery-comments.min.js') }}"></script>
+    <footer class="page__footer">
+        SOČ 2020
+    </footer>
+
 </body>
 
 </html>

@@ -180,7 +180,7 @@
 
 @media screen and (max-width: 381px){
   .ui-widget.ui-widget-content{
-    top: 19% !important;
+    top: 23.9% !important;
   }
 }
 
@@ -2348,11 +2348,18 @@ a.ui-button:active,
   overflow: hidden;
 }
 
-.comment {
-  display: flex;
-  align-items: flex-start;
-  padding-top: 3rem;
-  flex-flow: column;
+.textarea {
+  color: #000;
+}
+
+time {
+  visibility: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#comments-container {
+  padding-top: 10rem;
 }
 
 .comment__boxes {

@@ -1,95 +1,71 @@
+const { comment } = require("postcss");
+
+var path = window.location.pathname;
+$(document).ready(function () {
+	$('#comments-container').comments({
+		postCommentOnEnter: true,
+		enableReplying: false,
+		enableNavigation: false,
+		enableUpvoting: false,
+		profilePictureURL: 'https://viima-app.s3.amazonaws.com/media/public/defaults/user-icon.png',
+		getComments: function (success, error) {
+
+			axios.get(`${path}/api/comments`)
+				.then(function (response) {
+
+					success(response.data)
 
 
+				})
+				.catch(function (error) {
+
+					console.log(error);
+				})
+				.then(function () {
+					// always executed
+				});
+
+		},
+		deleteComment: function (commentJSON, success, error) {
+			axios.delete(`${path}/comment/` + commentJSON.id, {
 
 
+			})
+				.then(function (response) {
+					success(commentJSON)
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+		},
+		putComment: function (commentJSON, success, error) {
 
-const Comment = (function () {
+			axios.put(`${path}/comment/` + commentJSON.id, {
+				content: commentJSON.content,
+				comment_id: commentJSON.id,
 
-	const axios = require('axios').default;
-	var path = window.location.pathname;
-	var commentSection = document.querySelector('.comment__list');
+			})
+				.then(function (response) {
+					success(commentJSON)
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+		},
+		postComment: function (commentJSON, success, error) {
 
+			axios.post(`${path}/comment`, {
+				content: commentJSON.content,
+				comment_id: commentJSON.id,
 
-	function mountComments (response, isAddedByUser) {
-		var li = '';
-		if (isAddedByUser) {
-			let data = response.data;
-			let index = data.length - 1;
-			li = document.createElement('li');
-			li.classList.add('comment__list-item');
-			li.innerHTML = `${data[index].user} | ${data[index].comment}`;
-			commentSection.appendChild(li);
-			li.scrollIntoView({ behavior: "smooth", block: "center" });
-		} else {
-			var data = response.data;
-			data.forEach(data => {
-				li = document.createElement('li');
-				li.classList.add('comment__list-item');
-				li.innerHTML = `${data.user} | ${data.comment}`;
-				commentSection.appendChild(li);
-			});
+			})
+				.then(function (response) {
+					success(commentJSON)
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+		},
+	});
 
-		}
-
-	}
-
-	function initComments () {
-
-		axios.get(`${path}/api/comments`).then(function (response) {
-			mountComments(response, false)
-		})
-	}
-	function getComments (response) {
-
-		axios.get(`${path}/api/comments`).then(function (response) {
-			mountComments(response, true)
-		})
-	}
-	function postComments () {
-		var tagsToReplace = {
-			'&': '&amp;',
-			'<': '&lt;',
-			'>': '&gt;'
-		};
-
-		function replaceTag (tag) {
-			return tagsToReplace[tag] || tag;
-		}
-
-		function safe_tags_replace (str) {
-			return str.replace(/[&<>]/g, replaceTag);
-		}
-		let text = textArea.value;
-
-		var safeText = safe_tags_replace(text);
-		axios.post(`${path}/comment`, {
-			comment: safeText,
-		}).then(function () {
-			textArea.value = '';
-			getComments();
-		});
-	}
-
-
-	function addComment (e) {
-
-		e.preventDefault();
-		postComments();
-	}
-	function submitOnEnter (e) {
-		if (e.keyCode === 13) {
-
-			postComments()
-		}
-	}
-
-	return {
-		addComment: addComment,
-		submitOnEnter: submitOnEnter,
-		initComments: initComments
-	}
-
-}())
-
-
-window.addEventListener('load', Comment.initComments);
+})

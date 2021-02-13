@@ -1,8 +1,15 @@
+.textarea {
+    color: #000;
+}
+time {
+    visibility: none;
+    opacity: 0;
+    pointer-events: none;
+}
+#comments-container {
+    padding-top: 10rem;
+}
 .comment {
-    display: flex;
-    align-items: flex-start;
-    padding-top: 3rem;
-    flex-flow: column;
     &__boxes {
         padding-bottom: 10rem;
     }
