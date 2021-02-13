@@ -1,13 +1,14 @@
 (function () {
+
 	let spinner = document.querySelector('#spinner');
 	let logo = document.querySelectorAll('#logo path');
-	document.body.style.overflow = "hidden";
 
-	spinner.scrollIntoView();
+	spinner.scrollIntoView(true);
+	document.body.classList.add('scroll--off')
 
 	function hideSpinner () {
 		spinner.classList.remove('spinner--active')
-		document.body.style.overflowY = "scroll"
+		document.body.classList.remove('scroll--off')
 
 	}
 	window.addEventListener('load', (event) => {

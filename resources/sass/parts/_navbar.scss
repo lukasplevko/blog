@@ -16,3 +16,56 @@
     width: 100%;
     z-index: 2;
 }
+.nav-item-username {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fom-inline {
+    position: relative;
+}
+.search__dropdown {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.192);
+    color: #000;
+    max-height: 30rem;
+    height: 15rem;
+    top: 100%;
+    top: 1;
+    width: 100%;
+    z-index: 2;
+    overflow-y: scroll;
+    background-clip: padding-box;
+    backdrop-filter: blur(30px);
+
+    transition: all 0.2s ease-in;
+}
+.search__ball {
+    height: 40px;
+    width: 40px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    overflow-wrap: break-word;
+
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+    animation: 3s slide infinite alternate;
+    &--active {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes slide {
+    from {
+        transform: translate(10rem, 8rem);
+    }
+    to {
+        transform: translate(3rem, 5rem);
+    }
+}

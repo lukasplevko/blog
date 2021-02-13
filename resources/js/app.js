@@ -1,15 +1,11 @@
-require('./spinner');
 
 require('./bootstrap');
+import 'jquery-ui/ui/widgets/autocomplete.js';
+require('./spinner');
+require('./bootstrap');
+require('./navbar');
 require('./articles');
-// require('./slick');
+require('./search');
 require('./lightbox');
 require('alpinejs');
-
-// $('.article__gallery').slick({
-// 	dots: true,
-// 	infinite: true,
-// 	speed: 500,
-// 	fade: true,
-// 	cssEase: 'linear'
-// });
+require('./comments');

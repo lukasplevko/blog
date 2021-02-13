@@ -15,11 +15,16 @@ use App\Http\Controllers\PagesController;
 */
 
 Route::get('/', [PagesController::class, 'home'])->name('home');
-Route::get('/{slug}', [PagesController::class, 'show'])->name('article');
+Route::get('post/{slug}', [PagesController::class, 'show'])->name('article');
+Route::post('/post/{slug}/comment', [PagesController::class, 'comment']);
+Route::put('/post/{slug}/comment/{comment_id}', [PagesController::class, 'EditComment']);
+Route::delete('/post/{slug}/comment/{comment_id}', [PagesController::class, 'destroyComment']);
+Route::get('/post/{slug}/api/comments', [PagesController::class, 'getComments']);
+// Route::get('/api/posts', [PagesController::class, 'getPosts']);
+Route::get('api/posts', [PagesController::class, 'getPosts']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+
+Route::get('/dashboard', [PagesController::class, 'dashboard'])->name('dashboard');
 
 require __DIR__ . '/auth.php';
 

@@ -1,7 +1,9 @@
+@import "~jquery-ui/themes/base/all.css";
 @import "./parts/_homepage";
 @import "./parts/_article";
 @import "./parts/_navbar";
 @import "./parts/_spinner";
+@import "./parts/comments";
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Nunito");
 
