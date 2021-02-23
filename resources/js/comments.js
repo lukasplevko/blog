@@ -59,17 +59,32 @@ $(document).ready(function () {
 					"Access-Control-Allow-Origin": "*",
 				}
 			};
-			axios.post(`${path}/comment`, {
-				content: commentJSON.content,
-				comment_id: commentJSON.id,
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				}
+			});
+			$.ajax({
+				type: "POST",
+				url: `${path}/comment`,
+				data: {
+					content: commentJSON.content,
+					comment_id: commentJSON.id
+				},
+				success: success(commentJSON),
 
-			}, axiosConfig)
-				.then(function (response) {
-					success(commentJSON)
-				})
-				.catch(function (error) {
-					console.log(error);
-				});
+			});
+			// axios.post(`${path}/comment`, {
+			// 	content: commentJSON.content,
+			// 	comment_id: commentJSON.id,
+
+			// }, axiosConfig)
+			// 	.then(function (response) {
+			// 		success(commentJSON)
+			// 	})
+			// 	.catch(function (error) {
+			// 		console.log(error);
+			// 	});
 		},
 	});
 

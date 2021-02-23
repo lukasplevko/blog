@@ -53846,14 +53846,29 @@ $(document).ready(function () {
           "Access-Control-Allow-Origin": "*"
         }
       };
-      axios.post("".concat(path, "/comment"), {
-        content: commentJSON.content,
-        comment_id: commentJSON.id
-      }, axiosConfig).then(function (response) {
-        success(commentJSON);
-      })["catch"](function (error) {
-        console.log(error);
+      $.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
       });
+      $.ajax({
+        type: "POST",
+        url: "".concat(path, "/comment"),
+        data: {
+          content: commentJSON.content,
+          comment_id: commentJSON.id
+        },
+        success: success(commentJSON)
+      }); // axios.post(`${path}/comment`, {
+      // 	content: commentJSON.content,
+      // 	comment_id: commentJSON.id,
+      // }, axiosConfig)
+      // 	.then(function (response) {
+      // 		success(commentJSON)
+      // 	})
+      // 	.catch(function (error) {
+      // 		console.log(error);
+      // 	});
     }
   });
 });
