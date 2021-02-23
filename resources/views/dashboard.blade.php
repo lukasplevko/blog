@@ -40,8 +40,7 @@
                                     style="background-image: url(https://thumbs.dreamstime.com/b/default-avatar-profile-trendy-style-social-media-user-icon-187599373.jpg)">
                                 </div>
                                 <div>
-                                    <p class="font-bold text-gray-900">Tiffany Heffner</p>
-                                    <p class="text-sm text-gray-700">(555) 555-4321</p>
+
                                 </div>
                             </div>
                         </div>
