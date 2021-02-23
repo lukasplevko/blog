@@ -116912,6 +116912,9 @@ Vue.component("post-form", {
         enabled: false,
         views: 0
       },
+      mediaWysiwygConfig: {
+        removeformatPasted: true
+      },
       mediaCollections: ["gallery", "thumbnail"]
     };
   }

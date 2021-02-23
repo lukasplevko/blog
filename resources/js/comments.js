@@ -53,12 +53,17 @@ $(document).ready(function () {
 				});
 		},
 		postComment: function (commentJSON, success, error) {
-
+			let axiosConfig = {
+				headers: {
+					'Content-Type': 'application/json;charset=UTF-8',
+					"Access-Control-Allow-Origin": "*",
+				}
+			};
 			axios.post(`${path}/comment`, {
 				content: commentJSON.content,
 				comment_id: commentJSON.id,
 
-			})
+			}, axiosConfig)
 				.then(function (response) {
 					success(commentJSON)
 				})

@@ -53840,10 +53840,16 @@ $(document).ready(function () {
       });
     },
     postComment: function postComment(commentJSON, success, error) {
+      var axiosConfig = {
+        headers: {
+          'Content-Type': 'application/json;charset=UTF-8',
+          "Access-Control-Allow-Origin": "*"
+        }
+      };
       axios.post("".concat(path, "/comment"), {
         content: commentJSON.content,
         comment_id: commentJSON.id
-      }).then(function (response) {
+      }, axiosConfig).then(function (response) {
         success(commentJSON);
       })["catch"](function (error) {
         console.log(error);
